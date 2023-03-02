@@ -6,6 +6,26 @@
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --animation-duration: 300ms;
   }
+  
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(64, 82, 122); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(40, 55, 90); 
+}
 
   p {
     margin: 0;
@@ -172,8 +192,4 @@
     &:focus {
       opacity: 0.9;
     }
-  }
-  
-  .blur {
-    filter: blur(5px);
   }
