@@ -35,19 +35,21 @@
     background-color: rgb(64, 82, 122);
     padding: 10px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
     position: sticky;
     top: 0;
     z-index: 1;
-    box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 0.25);
+    box-shadow: 0px 3px 3px 0 rgb(0, 0, 0, 0.25);
+    width: 100 vw;
     height: 60px;
   
     &__search-form {
       position: relative;
       border-radius: 5px;
       overflow: hidden;
+      margin-left: 2vw;
     }
   
     &__search-button {
@@ -56,7 +58,7 @@
       right: 0;
       height: 100%;
       border: none;
-      font-size: 13px;
+      font-size: 16px;
       color: #333;
       background-color: #f5f5f5;
       width: 36px;
@@ -76,8 +78,8 @@
       outline: none;
       padding: 10px;
       font-size: 16px;
-      width: 240px;
-      transition: width 250ms ease-in-out;
+      width: 24vw;
+      font-family: "DM Sans", sans-serif;
     }
   
     &__text {

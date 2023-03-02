@@ -1,0 +1,128 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+}
+
+.clock {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: no-wrap;
+	align-items: center;
+}
+.clock__block {
+    font-family: "DM Sans", sans-serif;
+	background-color: rgba(255,255,255, 0.25);
+	border-radius: 0.5rem;
+	box-shadow: 0 3px 3px rgba(0,0,0, 0.15);
+	font-size: 1em;
+	line-height: 1.9;
+	margin: 0.5rem;
+	overflow: hidden;
+	text-align: center;
+	width: 2rem;
+	height: 1.9rem;
+	transition:
+		background-color var(--trans-dur),
+		box-shadow var(--trans-dur);
+}
+.clock__colon {
+	display: none;
+	font-size: 1em;
+	opacity: 0.5;
+	position: relative;
+}
+.clock__colon:before,
+.clock__colon:after {
+	background-color: currentColor;
+	border-radius: 50%;
+	content: "";
+	display: block;
+	position: absolute;
+	top: -0.05em;
+	left: -0.05em;
+	width: 0.1em;
+	height: 0.1em;
+}
+.clock__colon:before {
+	transform: translateY(-200%);
+}
+.clock__colon:after {
+	transform: translateY(200%);	
+}
+.clock__digit-group {
+	display: flex;
+	flex-direction: column-reverse;
+}
+.clock__digits {
+	width: 100%;
+	height: 100%;
+}
+.clock__block--bounce {
+	animation: bounce 0.75s; 
+}
+.clock__block--bounce .clock__digit-group {
+	animation: roll 0.75s ease-in-out forwards; 
+	transform: translateY(-50%);
+}
+.clock__block--delay1,
+.clock__block--delay1 .clock__digit-group {
+	animation-delay: 0.1s;
+}
+.clock__block--delay2,
+.clock__block--delay2 .clock__digit-group {
+	animation-delay: 0.2s;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,10%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+	.clock__block {
+		background-color: hsl(var(--hue),90%,40%);
+		box-shadow: 0 1rem 2rem hsla(var(--hue),90%,60%,0.4);
+	}
+	.clock__block--small {
+		box-shadow: 0 0.5rem 2rem hsla(var(--hue),90%,60%,0.4);
+	}
+}
+
+/* Beyond mobile */
+@media (min-width: 768px) {
+	.clock {
+		flex-direction: row;
+	}
+	.clock__colon {
+		display: inherit;
+	}
+}
+
+/* Animations */
+@keyframes bounce {
+	from,
+	to {
+		animation-timing-function: ease-in;
+		transform: translateY(0);
+	}
+	50% {
+		animation-timing-function: ease-out;
+		transform: translateY(15%);
+	}
+}
+@keyframes roll {
+	from {
+		transform: translateY(-50%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}

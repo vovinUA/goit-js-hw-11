@@ -1,4 +1,5 @@
 <header class="header">
+  <div>
     <form class="header__search-form" id="search-form">
       <input
         class="header__search"
@@ -12,4 +13,29 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
     </form>
+  </div>
+  <div>
+    <div class="clock" aria-label="00:00:00 AM">
+      <div class="clock__block clock__block--delay2" aria-hidden="true" data-time-group>
+        <div class="clock__digit-group">
+          <div class="clock__digits" data-time="a">00</div>
+          <div class="clock__digits" data-time="b">00</div>
+        </div>
+      </div>
+      <div class="clock__colon"></div>
+      <div class="clock__block clock__block--delay1" aria-hidden="true" data-time-group>
+        <div class="clock__digit-group">
+          <div class="clock__digits" data-time="a">00</div>
+          <div class="clock__digits" data-time="b">00</div>
+        </div>
+      </div>
+      <div class="clock__colon"></div>
+      <div class="clock__block" aria-hidden="true" data-time-group>
+        <div class="clock__digit-group">
+          <div class="clock__digits" data-time="a">00</div>
+          <div class="clock__digits" data-time="b">00</div>
+        </div>
+      </div>
+    </div>
+  </div>
   </header>
